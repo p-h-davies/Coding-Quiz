@@ -8,7 +8,7 @@ let currentQuestionCard = 0;
 
 let quizQuestions = [
     {
-        question: "What is 10/2?",
+        question1: "What is 10/2?",
         answers: {
             a: '3',
             b: '5',
@@ -17,7 +17,7 @@ let quizQuestions = [
         correctAnswer: 'b'
     },
     {
-        question: "What is 30/3?",
+        question2: "What is 30/3?",
         answers: {
             a: '3',
             b: '5',
@@ -26,7 +26,7 @@ let quizQuestions = [
         correctAnswer: 'c'
     },
     {
-        question: "What is 30/3?",
+        question3: "What is 30/3?",
         answers: {
             a: '3',
             b: '5',
@@ -35,7 +35,7 @@ let quizQuestions = [
         correctAnswer: 'c'
     },
     {
-        question: "What is 30/3?",
+        question4: "What is 30/3?",
         answers: {
             a: '3',
             b: '5',
@@ -46,55 +46,16 @@ let quizQuestions = [
 ];
 
 
+var currentQuestion = 0
 
-function displayQuiz() {
+function showQuestion(currentQuestion) {
 
-    const output = [];
-
-    quizQuestions.forEach((questions, questionNumber) => {
-
-        const answers = [];
-
-        for (options in questions.answers) {
-            answers.push(
-                `<label> <input type="radio" name="question${questionNumber}" value="options">
-
-           ${questions.answers[options]}
-          </label>`
-            );
-        }
-        output.push(
-            `<div class="slide">
-    <div class="question"> ${questions.question} </div>
-    <div class="answers"> ${answers.join("")} </div>
-  </div>`
-        );
-    }
-    );
-    quizContainer.innerHTML = output.join('');
+    currentQuestion = quizQuestions[0];
+    quizContainer.innerHTML = currentQuestion;
+    currentQuestion++;
 }
-displayQuiz()
 
-
-
-nextButton.addeventlistener("click", function () {
-    showQuestion(quizQuestions + 1)
-});
-
-previousButton.addeventlistener("click", function () {
-    showQuestion(quizQuestions - 1)
-});
-
-
-
-
-
-
-
-
-
-
-
+showQuestion()
 
 
 
