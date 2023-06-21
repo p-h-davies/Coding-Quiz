@@ -4,11 +4,11 @@ let submitButton = document.getElementById('submit');
 let previousButton = document.getElementById("previous");
 let nextButton = document.getElementById("next");
 let questionCard = document.querySelectorAll(".slide");
-let currentQuestionCard = 0;
+
 
 let quizQuestions = [
     {
-        question1: "What is 10/2?",
+        question: "What is 10/2?",
         answers: {
             a: '3',
             b: '5',
@@ -17,7 +17,7 @@ let quizQuestions = [
         correctAnswer: 'b'
     },
     {
-        question2: "What is 30/3?",
+        question: "What is 30/3?",
         answers: {
             a: '3',
             b: '5',
@@ -26,7 +26,7 @@ let quizQuestions = [
         correctAnswer: 'c'
     },
     {
-        question3: "What is 30/3?",
+        question: "What is 30/3?",
         answers: {
             a: '3',
             b: '5',
@@ -35,7 +35,7 @@ let quizQuestions = [
         correctAnswer: 'c'
     },
     {
-        question4: "What is 30/3?",
+        question: "What is 30/3?",
         answers: {
             a: '3',
             b: '5',
@@ -50,12 +50,21 @@ var currentQuestion = 0
 
 function showQuestion(currentQuestion) {
 
-    currentQuestion = quizQuestions[0];
+    currentQuestion = quizQuestions.question[1]
     quizContainer.innerHTML = currentQuestion;
     currentQuestion++;
 }
-
 showQuestion()
 
 
 
+
+//set up question reel
+
+//timer
+
+//userresponse = correct answer, score goes up
+
+//userresponse = incorre3ct answer, score goes down
+
+//score stored in local memory on separate html page
