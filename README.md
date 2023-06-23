@@ -15,7 +15,7 @@ N/A
 
 
 ## Usage
-To use this application, please navigate to: https://p-h-davies.github.io/Password-Generator/. 
+To use this application, please navigate to: https://p-h-davies.github.io/Coding-Quiz/. 
 
 Once you have arrived at that URL, press the 'Start' button to begin the quiz. Once you answer a question, the next question will appear, until you reach the end of the question list or until the time on the timer runs out. Any penalties you incur will be visibly counted underneath the timer.
 
