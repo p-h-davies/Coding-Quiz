@@ -104,10 +104,10 @@ function btnPressA() {
             secondsLeft = 0
         }
         penaltyEl.append("        X        ")
-        timeEl.textContent = "Game Over! You finished with " + secondsLeft + " seconds left";
+        timeEl.textContent = "Game over! You finished with " + secondsLeft + " seconds left.";
         end()
     } else if (questionIndex === 4 && userSelection == answer) {
-        timeEl.textContent = "Great job! You finished with " + secondsLeft + " seconds left";
+        timeEl.textContent = "Great job! You finished with " + secondsLeft + " seconds left.";
         end()
     } else if (secondsLeft < 0 && userSelection !== answer) {
         secondsLeft -= 10;
@@ -115,7 +115,7 @@ function btnPressA() {
             secondsLeft = 0
         }
         penaltyEl.append("        X        ")
-        timeEl.textContent = "Game Over! You finished with " + secondsLeft + " seconds left";
+        timeEl.textContent = "Game over! You finished with " + secondsLeft + " seconds left.";
         end()
     } else if (secondsLeft < 0 && userSelection == answer) {
         end()
@@ -146,10 +146,10 @@ function btnPressB() {
             secondsLeft = 0
         }
         penaltyEl.append("        X        ")
-        timeEl.textContent = "Game Over! You finished with " + secondsLeft + " seconds left";
+        timeEl.textContent = "Game over! You finished with " + secondsLeft + " seconds left.";
         end()
     } else if (questionIndex === 4 && userSelection == answer) {
-        timeEl.textContent = "Great job! You finished with " + secondsLeft + " seconds left";
+        timeEl.textContent = "Great job! You finished with " + secondsLeft + " seconds left.";
         end()
     } else if (secondsLeft < 0 && userSelection !== answer) {
         secondsLeft -= 10;
@@ -157,7 +157,7 @@ function btnPressB() {
             secondsLeft = 0
         }
         penaltyEl.append("        X        ")
-        timeEl.textContent = "Game Over! You finished with " + secondsLeft + " seconds left";
+        timeEl.textContent = "Game over! You finished with " + secondsLeft + " seconds left.";
         end()
     } else if (secondsLeft < 0 && userSelection == answer) {
         end()
@@ -188,10 +188,10 @@ function btnPressC() {
             secondsLeft = 0
         }
         penaltyEl.append("        X        ")
-        timeEl.textContent = "Game Over! You finished with " + secondsLeft + " seconds left";
+        timeEl.textContent = "Game over! You finished with " + secondsLeft + " seconds left.";
         end()
     } else if (questionIndex === 4 && userSelection == answer) {
-        timeEl.textContent = "Great job! You finished with " + secondsLeft + " seconds left";
+        timeEl.textContent = "Great job! You finished with " + secondsLeft + " seconds left.";
         end()
     } else if (secondsLeft < 0 && userSelection !== answer) {
         secondsLeft -= 10;
@@ -199,7 +199,7 @@ function btnPressC() {
             secondsLeft = 0
         }
         penaltyEl.append("        X        ")
-        timeEl.textContent = "Game Over! You finished with " + secondsLeft + " seconds left";
+        timeEl.textContent = "Game over! You finished with " + secondsLeft + " seconds left.";
         end()
     } else if (secondsLeft < 0 && userSelection == answer) {
         end()
@@ -214,7 +214,7 @@ function stopTimer() {
 function sendMessage() {
     end();
     secondsLeft = 0
-    timeEl.textContent = "Game Over! You have " + secondsLeft + " seconds left";
+    timeEl.textContent = "Game over! You finished with " + secondsLeft + " seconds left";
 }
 
 
