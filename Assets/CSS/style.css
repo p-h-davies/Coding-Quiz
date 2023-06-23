@@ -1,0 +1,46 @@
+#start {
+    position: relative;
+    left: 1100px;
+    top: 600px;
+    height: 100px;
+    width: 200px;
+    font-size: 50px;
+    background-color: white;
+}
+
+#answerA {
+    position: relative;
+    left: 800px;
+    top: 600px;
+    height: 100px;
+    width: 200px;
+    font-size: 50px;
+    background-color: white;
+    display: flex
+}
+
+#answerB {
+    position: relative;
+    left: 100px;
+    top: 600px;
+    height: 100px;
+    width: 200px;
+    font-size: 50px;
+    background-color: white;
+    display: flex
+}
+
+#answerC {
+    position: relative;
+    left: 1200px;
+    top: 600px;
+    height: 100px;
+    width: 200px;
+    font-size: 50px;
+    background-color: white;
+    display: flex
+}
+
+.quizcontainer {
+    display: flex
+}

@@ -36,9 +36,9 @@ initialsEl.style.display = 'none'
 //Questions 
 let questionsList = [
     { title: "How do you change the colour of an H1 element in CSS?", answerA: "color", answerB: "font-color", answerC: "h1-color:", correctAnswer: "color" },
-    { title: "How do you change the colour of an H22222 in CSS?", answerA: "co6666or", answerB: "font-color", answerC: "h1-color:", correctAnswer: "co6666or" },
-    { title: "How do you change the colour of an H33333in CSS?", answerA: "colo65", answerB: "font-color", answerC: "h1-color:", correctAnswer: "color" },
-    { title: "How do you change the colour of an H1 element in CSS?", answerA: "col444or", answerB: "font-color", answerC: "h1-color:", correctAnswer: "color" },
+    { title: "How do you select a element by their ID using querySelector in vanilla javascript?", answerA: "'.answer'", answerB: "'#answer'", answerC: "'answer'", correctAnswer: "'#answer'" },
+    { title: "Which of the following is a library which helps you work with time and dates?", answerA: "Bootstrap", answerB: "Day.js", answerC: "JQuery UI", correctAnswer: "Day.js" },
+    { title: "How would you attribute 'display: none' to an element in vanilla Javascript?", answerA: "(style).display.none", answerB: "style(display: none)", answerC: "style.display = 'none'", correctAnswer: "style.display = 'none'" },
 ]
 
 
@@ -58,7 +58,7 @@ function displayQuestion() {
 let startEl = document.querySelector("#start");
 
 startEl.addEventListener("click", function () {
-    secondsLeft = 50;
+    secondsLeft = 500;
     displayQuestion();
     startEl.style.display = 'none'
     seeScoresButton.style.display = 'none';
@@ -73,6 +73,7 @@ startEl.addEventListener("click", function () {
 
 //Cycle Through Questions
 let score = 0;
+
 
 
 answerElA.addEventListener("click", btnPressA);
@@ -196,6 +197,12 @@ function stopTimer() {
     clearInterval(timerInterval)
 }
 
+function sendMessage() {
+    end();
+    secondsLeft = 0
+    timeEl.textContent = "Game Over! You have " + secondsLeft + " seconds left";
+}
+
 
 // End Quiz
 function end() {
@@ -210,21 +217,17 @@ function end() {
 }
 
 
-// Score saving
+// Save Score
 let responseArray = []
 
 function saveScore() {
     let enteredInitials = document.getElementById("userInit").value;
-
     let responses = {
         score: score,
         initials: enteredInitials,
     }
-
     responseArray.push(responses)
-
     console.log(responseArray)
-
     localStorage.setItem("responses", JSON.stringify(responseArray));
 }
 
@@ -244,26 +247,18 @@ function saveSave() {
 
 saveSave()
 
-
+//Render Saved Scores
 function renderScores() {
 
     for (let index = 0; index < responseArray.length; index++) {
         const element = responseArray[index];
         var li = document.createElement('li');
-        li.innerText = element.initials + "       " + element.score;
+        li.innerText = "Initials:  " + element.initials + "                    Score: " + element.score;
         scoreList.appendChild(li);
     }
 }
-
 
 seeScoresButton.addEventListener("click", function (event) {
     event.preventDefault();
     renderScores();
 });
-
-
-function sendMessage() {
-    end();
-    secondsLeft = 0
-    timeEl.textContent = "Game Over! You have " + secondsLeft + " seconds left";
-}
