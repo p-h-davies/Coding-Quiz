@@ -43,6 +43,9 @@ let questionsList = [
     { title: "How do you select a element by their ID using querySelector in vanilla javascript?", answerA: "'.answer'", answerB: "'#answer'", answerC: "'answer'", correctAnswer: "'#answer'" },
     { title: "Which of the following is a library which helps you work with time and dates?", answerA: "Bootstrap", answerB: "Day.js", answerC: "JQuery UI", correctAnswer: "Day.js" },
     { title: "How would you attribute 'display: none' to an element in vanilla Javascript?", answerA: "(style).display.none", answerB: "style(display: none)", answerC: "style.display = 'none'", correctAnswer: "style.display = 'none'" },
+    { title: "Which of the following is good for accessibility?", answerA: "Using Alt Tags", answerB: "Using aria-labels", answerC: "both", correctAnswer: "both" },
+    { title: "What does HTML stand for?", answerA: "Hypertext Markup Language", answerB: "Hypertext Markdown Language", answerC: "Hypercode Markup Language", correctAnswer: "Hypertext Markup Language" },
+    { title: "How do you stop a timer in Javascript?", answerA: "setInterval()", answerB: "clearInterval()", answerC: "stopTimer()", correctAnswer: "clearInterval()" }
 ]
 
 
@@ -61,7 +64,7 @@ function displayQuestion() {
 //Start Quiz
 let startEl = document.querySelector("#start");
 startEl.addEventListener("click", function () {
-    secondsLeft = 50;
+    secondsLeft = 70;
     displayQuestion();
     penaltyEl.style.display = 'inline-flex';
     warningEl.style.display = 'inline-flex';
@@ -89,16 +92,16 @@ function btnPressA() {
         score++;
         console.log("yes");
         console.log(score)
-    } else if ((userSelection !== answer) && secondsLeft > 0 && questionIndex < 4) {
+    } else if ((userSelection !== answer) && secondsLeft > 0 && questionIndex < 7) {
         secondsLeft -= 10;
         penaltyEl.append("        X        ")
         console.log("no")
     }
 
 
-    if (questionIndex < 4 && secondsLeft > 0) {
+    if (questionIndex < 7 && secondsLeft > 0) {
         displayQuestion();
-    } else if (questionIndex === 4 && userSelection !== answer) {
+    } else if (questionIndex === 7 && userSelection !== answer) {
         secondsLeft -= 10;
         if (secondsLeft == 0 || secondsLeft < 0) {
             secondsLeft = 0
@@ -106,7 +109,7 @@ function btnPressA() {
         penaltyEl.append("        X        ")
         timeEl.textContent = "Game over! You finished with " + secondsLeft + " seconds left.";
         end()
-    } else if (questionIndex === 4 && userSelection == answer) {
+    } else if (questionIndex === 7 && userSelection == answer) {
         timeEl.textContent = "Great job! You finished with " + secondsLeft + " seconds left.";
         end()
     } else if (secondsLeft < 0 && userSelection !== answer) {
@@ -131,16 +134,16 @@ function btnPressB() {
         score++;
         console.log("yes");
         console.log(score)
-    } else if ((userSelection !== answer) && secondsLeft > 0 && questionIndex < 4) {
+    } else if ((userSelection !== answer) && secondsLeft > 0 && questionIndex < 7) {
         secondsLeft -= 10;
         penaltyEl.append("        X        ")
         console.log("no")
     }
 
 
-    if (questionIndex < 4 && secondsLeft > 0) {
+    if (questionIndex < 7 && secondsLeft > 0) {
         displayQuestion();
-    } else if (questionIndex === 4 && userSelection !== answer) {
+    } else if (questionIndex === 7 && userSelection !== answer) {
         secondsLeft -= 10;
         if (secondsLeft == 0 || secondsLeft < 0) {
             secondsLeft = 0
@@ -148,7 +151,7 @@ function btnPressB() {
         penaltyEl.append("        X        ")
         timeEl.textContent = "Game over! You finished with " + secondsLeft + " seconds left.";
         end()
-    } else if (questionIndex === 4 && userSelection == answer) {
+    } else if (questionIndex === 7 && userSelection == answer) {
         timeEl.textContent = "Great job! You finished with " + secondsLeft + " seconds left.";
         end()
     } else if (secondsLeft < 0 && userSelection !== answer) {
@@ -173,16 +176,16 @@ function btnPressC() {
         score++;
         console.log("yes");
         console.log(score)
-    } else if ((userSelection !== answer) && secondsLeft > 0 && questionIndex < 4) {
+    } else if ((userSelection !== answer) && secondsLeft > 0 && questionIndex < 7) {
         secondsLeft -= 10;
         penaltyEl.append("        X        ")
         console.log("no")
     }
 
 
-    if (questionIndex < 4 && secondsLeft > 0) {
+    if (questionIndex < 7 && secondsLeft > 0) {
         displayQuestion();
-    } else if (questionIndex === 4 && userSelection !== answer) {
+    } else if (questionIndex === 7 && userSelection !== answer) {
         secondsLeft -= 10;
         if (secondsLeft == 0 || secondsLeft < 0) {
             secondsLeft = 0
@@ -190,7 +193,7 @@ function btnPressC() {
         penaltyEl.append("        X        ")
         timeEl.textContent = "Game over! You finished with " + secondsLeft + " seconds left.";
         end()
-    } else if (questionIndex === 4 && userSelection == answer) {
+    } else if (questionIndex === 7 && userSelection == answer) {
         timeEl.textContent = "Great job! You finished with " + secondsLeft + " seconds left.";
         end()
     } else if (secondsLeft < 0 && userSelection !== answer) {
