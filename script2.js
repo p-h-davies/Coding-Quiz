@@ -14,6 +14,7 @@ var secondsLeft = 300;
 
 var timerInterval = setInterval(function () {
     secondsLeft--;
+    timeEl.style.fontSize = '50px';
     timeEl.textContent = "You have " + secondsLeft + " seconds left";
     if (secondsLeft < 0) {
         clearInterval(timerInterval);
@@ -204,7 +205,7 @@ function end() {
     answerElC.style.display = 'none'
     seeScoresButton.style.display = 'inline';
     finishButton.style.display = 'inline';
-    initialsEl.style.display = 'inline'
+    initialsEl.style.flex = '1';
     quizEl.textContent = "Your score is " + score;
     stopTimer()
 }

@@ -8,9 +8,11 @@ let finishButton = document.querySelector("#finish")
 let seeScoresButton = document.querySelector("#scores")
 let scoreList = document.querySelector("#score-list")
 let initialsEl = document.querySelector("#initials")
+let penaltyEl = document.querySelector("#penalty-storage")
+let warningEl = document.querySelector("#warning")
 
 // Timer
-var secondsLeft = 300;
+var secondsLeft = 2000;
 
 var timerInterval = setInterval(function () {
     secondsLeft--;
@@ -23,6 +25,8 @@ var timerInterval = setInterval(function () {
 
 
 //Hide buttons before game starts
+warningEl.style.display = 'none';
+penaltyEl.style.display = 'none';
 timeEl.style.display = 'none';
 seeScoresButton.style.display = 'none';
 finishButton.style.display = 'none';
@@ -56,14 +60,15 @@ function displayQuestion() {
 
 //Start Quiz
 let startEl = document.querySelector("#start");
-
 startEl.addEventListener("click", function () {
-    secondsLeft = 500;
+    secondsLeft = 50;
     displayQuestion();
+    penaltyEl.style.display = 'inline-flex';
+    warningEl.style.display = 'inline-flex';
     startEl.style.display = 'none'
     seeScoresButton.style.display = 'none';
     finishButton.style.display = 'none';
-    timeEl.style.display = 'inline';
+    timeEl.style.display = 'inline-flex';
     answerElA.style.display = 'inline';
     answerElB.style.display = 'inline';
     answerElC.style.display = 'inline'
@@ -86,7 +91,7 @@ function btnPressA() {
         console.log(score)
     } else if ((userSelection !== answer) && secondsLeft > 0 && questionIndex < 4) {
         secondsLeft -= 10;
-        timeEl.append("        10 secs lost!")
+        penaltyEl.append("        X        ")
         console.log("no")
     }
 
@@ -98,15 +103,18 @@ function btnPressA() {
         if (secondsLeft == 0 || secondsLeft < 0) {
             secondsLeft = 0
         }
+        penaltyEl.append("        X        ")
         timeEl.textContent = "Game Over! You finished with " + secondsLeft + " seconds left";
         end()
     } else if (questionIndex === 4 && userSelection == answer) {
+        timeEl.textContent = "Great job! You finished with " + secondsLeft + " seconds left";
         end()
     } else if (secondsLeft < 0 && userSelection !== answer) {
         secondsLeft -= 10;
         if (secondsLeft == 0 || secondsLeft < 0) {
             secondsLeft = 0
         }
+        penaltyEl.append("        X        ")
         timeEl.textContent = "Game Over! You finished with " + secondsLeft + " seconds left";
         end()
     } else if (secondsLeft < 0 && userSelection == answer) {
@@ -125,7 +133,7 @@ function btnPressB() {
         console.log(score)
     } else if ((userSelection !== answer) && secondsLeft > 0 && questionIndex < 4) {
         secondsLeft -= 10;
-        timeEl.append("        10 secs lost!")
+        penaltyEl.append("        X        ")
         console.log("no")
     }
 
@@ -137,15 +145,18 @@ function btnPressB() {
         if (secondsLeft == 0 || secondsLeft < 0) {
             secondsLeft = 0
         }
+        penaltyEl.append("        X        ")
         timeEl.textContent = "Game Over! You finished with " + secondsLeft + " seconds left";
         end()
     } else if (questionIndex === 4 && userSelection == answer) {
+        timeEl.textContent = "Great job! You finished with " + secondsLeft + " seconds left";
         end()
     } else if (secondsLeft < 0 && userSelection !== answer) {
         secondsLeft -= 10;
         if (secondsLeft == 0 || secondsLeft < 0) {
             secondsLeft = 0
         }
+        penaltyEl.append("        X        ")
         timeEl.textContent = "Game Over! You finished with " + secondsLeft + " seconds left";
         end()
     } else if (secondsLeft < 0 && userSelection == answer) {
@@ -164,7 +175,7 @@ function btnPressC() {
         console.log(score)
     } else if ((userSelection !== answer) && secondsLeft > 0 && questionIndex < 4) {
         secondsLeft -= 10;
-        timeEl.append("        10 secs lost!")
+        penaltyEl.append("        X        ")
         console.log("no")
     }
 
@@ -176,15 +187,18 @@ function btnPressC() {
         if (secondsLeft == 0 || secondsLeft < 0) {
             secondsLeft = 0
         }
+        penaltyEl.append("        X        ")
         timeEl.textContent = "Game Over! You finished with " + secondsLeft + " seconds left";
         end()
     } else if (questionIndex === 4 && userSelection == answer) {
+        timeEl.textContent = "Great job! You finished with " + secondsLeft + " seconds left";
         end()
     } else if (secondsLeft < 0 && userSelection !== answer) {
         secondsLeft -= 10;
         if (secondsLeft == 0 || secondsLeft < 0) {
             secondsLeft = 0
         }
+        penaltyEl.append("        X        ")
         timeEl.textContent = "Game Over! You finished with " + secondsLeft + " seconds left";
         end()
     } else if (secondsLeft < 0 && userSelection == answer) {
@@ -206,12 +220,13 @@ function sendMessage() {
 
 // End Quiz
 function end() {
+    warningEl.style.display = 'none';
     answerElA.style.display = 'none'
     answerElB.style.display = 'none'
     answerElC.style.display = 'none'
     seeScoresButton.style.display = 'inline';
     finishButton.style.display = 'inline';
-    initialsEl.style.display = 'inline'
+    initialsEl.style.display = 'inline-flex';
     quizEl.textContent = "Your score is " + score;
     stopTimer()
 }
@@ -249,11 +264,10 @@ saveSave()
 
 //Render Saved Scores
 function renderScores() {
-
     for (let index = 0; index < responseArray.length; index++) {
         const element = responseArray[index];
         var li = document.createElement('li');
-        li.innerText = "Initials:  " + element.initials + "                    Score: " + element.score;
+        li.innerText = "Initials: " + element.initials + " | Score: " + element.score;
         scoreList.appendChild(li);
     }
 }
