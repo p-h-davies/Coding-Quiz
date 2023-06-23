@@ -43,7 +43,7 @@ let questionsList = [
     { title: "How do you select a element by their ID using querySelector in vanilla javascript?", answerA: "'.answer'", answerB: "'#answer'", answerC: "'answer'", correctAnswer: "'#answer'" },
     { title: "Which of the following is a library which helps you work with time and dates?", answerA: "Bootstrap", answerB: "Day.js", answerC: "JQuery UI", correctAnswer: "Day.js" },
     { title: "How would you attribute 'display: none' to an element in vanilla Javascript?", answerA: "(style).display.none", answerB: "style(display: none)", answerC: "style.display = 'none'", correctAnswer: "style.display = 'none'" },
-    { title: "Which of the following is good for accessibility?", answerA: "Using Alt Tags", answerB: "Using aria-labels", answerC: "both", correctAnswer: "both" },
+    { title: "Which of the following is good for accessibility?", answerA: "Using Alt Tags", answerB: "Using aria-labels", answerC: "Both", correctAnswer: "Both" },
     { title: "What does HTML stand for?", answerA: "Hypertext Markup Language", answerB: "Hypertext Markdown Language", answerC: "Hypercode Markup Language", correctAnswer: "Hypertext Markup Language" },
     { title: "How do you stop a timer in Javascript?", answerA: "setInterval()", answerB: "clearInterval()", answerC: "stopTimer()", correctAnswer: "clearInterval()" }
 ]

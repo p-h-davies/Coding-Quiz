@@ -22,7 +22,7 @@ Once you have arrived at that URL, press the 'Start' button to begin the quiz. O
 Once the quiz has been completed, you will be presented with your score, your finish time, number of penalities and the option to put your initials into a form and save your results. If there are results saved (from your current session or an earlier one), you can press the 'See all Scores' button to render a list below of the saved scores.
 
 
-![screenshot of application showing the end of the quiz](./Assets/Images/screenshot-question.png)
+![screenshot of application showing the end of the quiz](./Assets/Images/screenshot-end.png)
 
 ## Credits
 
